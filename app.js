@@ -16,6 +16,10 @@ $(function() {
     
     // setInterval(updateGradient,10);
 
+    $('#topBars').click(function(){
+        $('.contactLinks').toggle()
+    });
+    
     $('.aboutMeLink').click(function() {
         $('.aboutMeBlurb').slideToggle(800);
         $(headers).hide(800);

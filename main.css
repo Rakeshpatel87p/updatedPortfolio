@@ -1,3 +1,5 @@
+/*cool color: #1fc08e*/
+
 html {
     background-color: black;
     text-align: center;
@@ -5,24 +7,42 @@ html {
     color: white;
 }
 
-#nameDefault {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 46px;
+body {
+	padding-top: 1%;
+}
+
+#topBars > hr {
+	top: 0;
+	border: 1px solid #1fc08e;
+}
+
+#topBars:hover {
+	cursor: pointer;
+}
+
+hr {
+	width: 3%;
+}
+
+.nameDefault {
+/*    font-family: 'Josefin Sans', sans-serif;
+    font-size: 46px;*/
     /*    color: #ffcd00;
 */
     text-transform: uppercase;
+    padding-top: 5%;
 }
 
 #gradient {
   display: table;
   margin: 0 auto;
-  font-family: "Roboto Slab";
-  font-weight: 500;
-  font-size: 7em;
+/*  font-family: "Roboto Slab";
+*/  font-weight: 500;
+  font-size: 6.3em;
   background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 200px;
+  line-height: 150px;
 }
 
 #middleName {
@@ -35,13 +55,15 @@ html {
     font-family: 'Rochester', cursive;
     -webkit-text-stroke: 0.1px #e05252;
     color: #262626;
-    font-size: 62px;
+    font-size: 45px;
     margin-top: -3%;
     background-color: #262626;
 }
 
 .contactLinks {
-    padding-bottom: 4%;
+	display: inline-block;
+	width:70em;
+	display: none;
 }
 
 .fa {
@@ -90,6 +112,10 @@ html {
     transition-property: border, transform;
     border: 1px solid #99e052;
     box-shadow: 1px 1px 3px 1px #52e0e0;
+}
+
+#circle > h3 {
+	padding-top:22%;
 }
 
 .aboutMeLink {
@@ -148,21 +174,23 @@ html {
 }
 
 @media screen and (min-width: 712px) {
-    body {
-        padding-top: 4%;
-    }
-    #nameDefault {
-        font-size: 120px;
+/*    body {
+        padding-top: 8%;
+    }*/
+    .nameDefault {
+        font-size: 10em;
     }
     #middleName {
         font-size: 95px;
     }
     #jobTitle {
-        font-size: 56px;
+        font-size: 62px;
         margin-top: -1%;
     }
+
     #circle {
         margin: 0 2%;
+        display: inline-block;
     }
     .contactLinks {
         padding-top: 2%;
