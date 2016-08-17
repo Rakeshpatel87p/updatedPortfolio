@@ -57,7 +57,6 @@ hr {
     color: #262626;
     font-size: 45px;
     margin-top: -3%;
-    background-color: #262626;
 }
 
 .contactLinks {
@@ -110,7 +109,7 @@ hr {
     transform: rotateZ(360deg);
     transition: 1s;
     transition-property: border, transform;
-    border: 1px solid #99e052;
+    border: 1px dotted #99e052;
     box-shadow: 1px 1px 3px 1px #52e0e0;
 }
 
@@ -126,7 +125,7 @@ hr {
 
 .portfolioLink {
     max-width: 75%;
-    margin-left: 9%;
+    margin-left: 12%;
 }
 
 .aboutMeBlurb {
