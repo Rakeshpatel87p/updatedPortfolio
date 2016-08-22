@@ -2,7 +2,7 @@
 
 var headers = $(".portfolioHeaders > h2").toArray();
 var images = $(".portfolioImages > img").toArray();
-var navigationCircles = $('.navigationCircles').children().toArray();
+var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
@@ -22,33 +22,30 @@ $(function() {
     $('.aboutMeLink').click(function() {
         $("[id='pageNavigation']").hide();
         $("[class='aboutMeClick']").show();
-        $('#fa-times').show();
+        $('#fa-times-aboutMe').show();
         // $('.aboutMeClick').wrapAll('display');
         $(headers).hide(800);
         $(images).hide(800);
         $('.portfolioNavigation').hide(800);
-        $('.aboutMeLink').parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
-            .siblings()
+        $('.aboutMeLink').parent().siblings()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
         i = 0;
 
     });
 
-    $('#fa-times').click(function() {
+    $('#fa-times-aboutMe').click(function() {
         $("[class='aboutMeClick']").hide();
         $('.aboutMeBlurb').children().hide();
-        $('#fa-times').hide();
-        $('#circle')
+        $('#fa-times-aboutMe').hide();
+        $('.pageNavigation').children()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
         // $('.pageNavigation').children()
         //     .css({ 'border': '1px solid purple' });
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+        // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").show();
-    })
+    });
 
     $('#whoAmI').click(function() {
         $('.aboutMePartI').show().siblings().hide();
@@ -85,9 +82,13 @@ $(function() {
 
     $('.portfolioLink').click(function() {
         $('.aboutMeBlurb').children().hide();
-        $('.portfolioNavigation').slideToggle(800);
-        $(images[i]).slideToggle(800);
-        $(headers[i]).slideToggle(800);
+        $('.portfolioNavigation').show();
+        $(images[i]).show();
+        $(headers[i]).show();
+        $('#navigateBack').show().siblings().hide();
+        $('#navigateForward').show().siblings().hide();
+        $('#fa-times-portfolio').show();
+        $('.portfolioNavigationCircles').show();
         $('.portfolioLink').parent()
             .css({ 'border': '1px dotted #99e052' })
             .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
@@ -97,6 +98,25 @@ $(function() {
         $(navigationCircles[i]).css('color', 'gold').siblings().css('color', 'white');
         i = 0;
 
+    });
+
+    $('#fa-times-portfolio').click(function() {
+        $('#navigateBack').hide();
+        $('#navigateForward').hide();
+        $(images).hide();
+        $(headers).hide();
+        // $('.portfolioContents').children().hide();
+        $('#fa-times-portfolio').hide();
+        $('#fa-times-aboutMe').hide();
+        $('.portfolioNavigationCircles').hide();
+        $('.pageNavigation').children()
+            .css({ 'border': '1px solid purple' })
+            .css({ 'box-shadow': '0px 0px 0px 0px' });
+        $("[id='pageNavigation']").show();
+        $('.pageNavigation').children()
+            .css({ 'border': '1px solid purple' })
+            .css({ 'box-shadow': '0px 0px 0px 0px' });
+        $("[id='pageNavigation']").show();
     });
 
     $('#navigateForward').click(function() {

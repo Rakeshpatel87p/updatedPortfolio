@@ -74,7 +74,8 @@ hr {
     margin-bottom: 2%;
 }
 
-#fa-times {
+#fa-times-aboutMe,
+#fa-times-portfolio {
     display: none;
     color: #52e0e0;
     cursor: pointer;
@@ -129,9 +130,9 @@ hr {
 }
 
 #circle:hover {
-    -webkit-transform: rotateZ(360deg);
+/*    -webkit-transform: rotateZ(360deg);
     -ms-transform: rotateZ(360deg);
-    transform: rotateZ(360deg);
+    transform: rotateZ(360deg);*/
     transition: 1s;
     transition-property: border, transform;
     border: 1px dotted #99e052;
@@ -210,6 +211,18 @@ hr {
     display: none;
     color: orange;
 }
+
+#navigateBack,
+#navigateForward {
+    display: none;
+    color: #99e052;
+}
+
+.portfolioNavigationCircles {
+    display: none;
+    padding-top: 2%;
+}
+
 #navigateBack:hover,
 #navigateForward:hover {
     cursor: pointer;
