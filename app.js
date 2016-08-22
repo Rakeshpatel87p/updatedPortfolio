@@ -21,9 +21,21 @@ $(function() {
 
     $('.aboutMeLink').click(function() {
         $("[id='pageNavigation']").hide();
-        $("[class='aboutMeClick']").show();
+        $("[class='aboutMeClick']").show(200);
         $('#fa-times-aboutMe').show();
-        // $('.aboutMeClick').wrapAll('display');
+        $('#circle').css('transform', 'rotateY(360deg)');
+        $('.aboutMeLink').parent().siblings().css('transform', 'rotateX(360deg)')
+
+        // Not Targeting DOM Elements for Spinning Circle
+        // $('#circle').siblings().css('transform', 'rotateY(360deg)');
+        // $('.pageNavigation').children('div[id] = "circle"]').css('transform', 'rotateY(360deg)');
+        // $("[class='aboutMeClick']").css('transform', 'rotateY(360deg)')
+        // .siblings().css('transform', 'rotateY(360deg)');
+        // $('.aboutMeLink').parent().css('transform', 'rotateY(360deg)');
+        // $('#whatMovesMe').parent().css('transform', 'rotateY(360deg)');
+
+
+        
         $(headers).hide(800);
         $(images).hide(800);
         $('.portfolioNavigation').hide(800);
@@ -53,6 +65,8 @@ $(function() {
             .parent()
             .css({ 'border': '1px dotted #99e052' })
             .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
+            .css('transform', 'rotateX(360deg)')
+
             .siblings()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
