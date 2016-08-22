@@ -1,5 +1,8 @@
 /*cool color: #1fc08e*/
 
+
+/*background shimmer/change tints of background*/
+
 html {
     background-color: black;
     text-align: center;
@@ -8,41 +11,52 @@ html {
 }
 
 body {
-	padding-top: 1%;
+    padding: 0;
+    margin: 0;
+}
+
+#gradient {
+    width: 100%;
+    height: 800px;
+    padding: 0px;
+    margin: 0px;
+    /*  position: relative;
+  z-index: 1000;*/
 }
 
 #topBars > hr {
-	top: 0;
-	border: 1px solid #1fc08e;
+    top: 0;
+    border: 1px solid #1fc08e;
 }
 
 #topBars:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 hr {
-	width: 3%;
+    width: 3%;
 }
 
 .nameDefault {
-/*    font-family: 'Josefin Sans', sans-serif;
-    font-size: 46px;*/
-    /*    color: #ffcd00;
+    /*    font-family: 'Josefin Sans', sans-serif;
 */
+    /*    font-size: 46px;
+    color: #ffcd00;*/
     text-transform: uppercase;
     padding-top: 5%;
 }
 
-#gradient {
-  display: table;
-  margin: 0 auto;
-/*  font-family: "Roboto Slab";
-*/  font-weight: 500;
-  font-size: 6.3em;
-  background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 150px;
+#nameGradient {
+    display: table;
+    margin: 0 auto;
+    /*  font-family: "Roboto Slab";
+*/
+    font-weight: 500;
+    font-size: 6.3em;
+    background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 150px;
 }
 
 #middleName {
@@ -57,12 +71,18 @@ hr {
     color: #262626;
     font-size: 45px;
     margin-top: -3%;
+    margin-bottom: 2%;
+}
+
+#fa-times {
+    display: none;
+    color: #52e0e0;
+    cursor: pointer;
 }
 
 .contactLinks {
-	display: inline-block;
-	width:70em;
-	display: none;
+    display: inline-block;
+    width: 70em;
 }
 
 .fa {
@@ -73,24 +93,28 @@ hr {
     padding-right: 28%;
 }
 
-.fa-twitter {
-    color: #55acee;
-}
-
 .fa-linkedin {
     color: #4c66a4;
+    opacity: 0;
 }
 
 .fa-github {
     color: purple;
+    opacity: 0;
 }
 
 .fa-envelope-o {
-    color: red;
+    color: #1fc08e;
+    opacity: 0.5;
+}
+
+.fa-envelope-o:hover {
+    opacity: 1;
 }
 
 .pageNavigation > div {
     display: inline-block;
+    cursor: pointer;
 }
 
 #circle {
@@ -101,11 +125,12 @@ hr {
     border-radius: 50px;
     transition-property: border, transform;
     border: 1px solid purple;
+    margin: 2%;
 }
 
 #circle:hover {
-    -webkit-transform: rotateZ(230deg);
-    -ms-transform: rotateZ(30deg);
+    -webkit-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
     transform: rotateZ(360deg);
     transition: 1s;
     transition-property: border, transform;
@@ -114,98 +139,123 @@ hr {
 }
 
 #circle > h3 {
-	padding-top:22%;
+    margin-top: 40%;
 }
+
+
+/*h3:hover {
+    padding-top: 22%;
+    position: block;
+    -moz-transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    -webkit-transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    -o-transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    -ms-transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+    transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}*/
 
 .aboutMeLink {
     width: 100%;
-    margin-left: 22%;
+    margin-left: 1%;
     border-radius: 8rem;
 }
 
-.portfolioLink {
-    max-width: 75%;
-    margin-left: 12%;
-}
-
-.aboutMeBlurb {
-    font-size: 20px;
+.aboutMeClick {
     display: none;
 }
 
+
+/*.aboutMeLinkSpan:hover {
+    -webkit-transform: rotateZ(-360deg);
+    -ms-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+/*    transform: scale(1) rotateZ(-360deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+*/
+
+
+}
+*/ .portfolioLink {
+    max-width: 75%;
+    margin-left: 12%;
+}
+.aboutMeBlurb {
+    font-size: 20px;
+}
 .aboutMePartI,
 .aboutMePartII,
 .aboutMePartIII {
-    border: 1px solid orange;
+    border: 1px solid #99e052;
     border-radius: 2rem;
     padding: 1%;
+    display: none;
+    width: 94%;
+    height: 150px;
 }
 
-.aboutMePartII {
-    width: 80%;
-    background-color: #ffcd00;
-    margin-left: 11%;
-    color: black;
+#tidBitParagraph {
+    margin-top: 14%;
 }
 
 .portfolioHeaders > h2,
 .portfolioImages > img {
     display: none;
 }
-
 .portfolioHeaders {
     padding-top: 1%;
     color: orange;
 }
-
 .portfolioImages > img {
     width: 90%;
 }
-
 .portfolioNavigation {
     display: none;
     color: orange;
 }
-
 #navigateBack:hover,
 #navigateForward:hover {
     cursor: pointer;
 }
-
 @media screen and (min-width: 712px) {
-/*    body {
+    /*    body {
         padding-top: 8%;
     }*/
+    
     .nameDefault {
         font-size: 10em;
     }
+    
     #middleName {
         font-size: 95px;
     }
+    
     #jobTitle {
         font-size: 62px;
         margin-top: -1%;
     }
-
+    
     #circle {
-        margin: 0 2%;
+        margin: 2% 2%;
         display: inline-block;
     }
+    
     .contactLinks {
         padding-top: 2%;
     }
-    .aboutMePartI,
-    .aboutMePartIII {
+    /*     {
         width: 49%;
         margin-left: 25%;
-    }
+    }*/
+    
+    .aboutMePartI,
+    .aboutMePartIII,
     .aboutMePartII {
         width: 31%;
-        margin-left: 35%;
+        margin-left: 33%;
     }
+    
     .portfolioImages > img {
         width: 50%;
     }
+    
     .socialIconsList {
         margin-left: 8%;
     }
