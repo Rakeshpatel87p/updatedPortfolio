@@ -46,6 +46,48 @@ hr {
     padding-top: 5%;
 }
 
+
+/*
+ This is my very first SCSS experiment
+*/
+
+
+/*
+ This is my very first SCSS experiment
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
+@keyframes wave {
+    from {
+        transform: translateY(0);
+        color: white;
+    }
+    to {
+        transform: translateY( -90px);
+    }
+}
+
+.nameDefault {
+    margin-top: 10em;
+    text-align: center;
+}
+
+.nameDefault span {
+    display: inline-block;
+    font-family: "Fredoka One", sans-serif;
+    font-size: 70px;
+    animation-duration: 2s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@for $i from 0 to 40 {
+    .nameDefault:nth-child( 20n + #{$i}) {
+        animation-delay: -#{(40 - $i) * 2 * 2 / 40 }s;
+    }
+}
+
 #nameGradient {
     display: table;
     margin: 0 auto;
@@ -130,7 +172,7 @@ hr {
 }
 
 #circle:hover {
-/*    -webkit-transform: rotateZ(360deg);
+    /*    -webkit-transform: rotateZ(360deg);
     -ms-transform: rotateZ(360deg);
     transform: rotateZ(360deg);*/
     transition: 1s;
@@ -191,11 +233,9 @@ hr {
     width: 94%;
     height: 150px;
 }
-
 #tidBitParagraph {
     margin-top: 14%;
 }
-
 .portfolioHeaders > h2,
 .portfolioImages > img {
     display: none;
@@ -211,18 +251,15 @@ hr {
     display: none;
     color: orange;
 }
-
 #navigateBack,
 #navigateForward {
     display: none;
     color: #99e052;
 }
-
 .portfolioNavigationCircles {
     display: none;
     padding-top: 2%;
 }
-
 #navigateBack:hover,
 #navigateForward:hover {
     cursor: pointer;
