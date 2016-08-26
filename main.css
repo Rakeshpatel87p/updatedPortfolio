@@ -43,7 +43,7 @@ hr {
     /*    font-size: 46px;
     color: #ffcd00;*/
     text-transform: uppercase;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 
@@ -56,7 +56,7 @@ hr {
  This is my very first SCSS experiment
 */
 
-@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
+/*@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
 @keyframes wave {
     from {
         transform: translateY(0);
@@ -86,7 +86,7 @@ hr {
     .nameDefault:nth-child( 20n + #{$i}) {
         animation-delay: -#{(40 - $i) * 2 * 2 / 40 }s;
     }
-}
+}*/
 
 #nameGradient {
     display: table;
@@ -226,8 +226,6 @@ hr {
 .aboutMePartI,
 .aboutMePartII,
 .aboutMePartIII {
-    border: 1px solid #99e052;
-    border-radius: 2rem;
     padding: 1%;
     display: none;
     width: 94%;

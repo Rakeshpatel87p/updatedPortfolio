@@ -1,4 +1,10 @@
-// Finish CSS styling
+// Portfolio links
+// Contact links hover effect
+// Spinning circles on click
+// Better circle hover styling
+// Timed transitions from About Me links
+
+// Wavy name text - learn less
 
 var headers = $(".portfolioHeaders > h2").toArray();
 var images = $(".portfolioImages > img").toArray();
@@ -6,15 +12,6 @@ var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
-    var text = 'Rakesh Patel';
-
-    for (var i in text) {
-        if (text[i] === " ") {
-            $(".nameDefault").append($("<span>").html("&nbsp;"));
-        } else {
-            $(".nameDefault").append($("<span>").text(text[i]));
-        }
-    }
     setInterval(updateGradient, 10);;
 
     $('.fa-envelope-o').hover(function() {
@@ -30,11 +27,20 @@ $(function() {
 
     $('.aboutMeLink').click(function() {
         $("[id='pageNavigation']").hide();
-        $("[class='aboutMeClick']").show(200);
+        $("[class='aboutMeClick']").fadeIn(1000);
+        $('.aboutMePartI').slideDown(1000).siblings().hide();
+        $('#whoAmI')
+            .parent()
+            .css({ 'border': '1px dotted #99e052' })
+            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
+            .css('transform', 'rotateX(360deg)')
         $('#fa-times-aboutMe').show();
-        $('#circle').css('transform', 'rotateY(360deg)');
-        $('.aboutMeLink').parent().siblings().css('transform', 'rotateX(360deg)')
-
+        $('.pageNavigation').find('div').css({'transform': 'rotateY(360deg)'});
+        console.log($('.pageNavigation').find('div'))
+        // $('.aboutMeLink').css('transform', 'rotateX(360deg)');
+        // $('.pageNavigation').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
+        // $("[class='aboutMeClick']").css('transform', 'rotateX(360deg)');
+        // $('#circle').children('.aboutMeClick').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
         // Not Targeting DOM Elements for Spinning Circle
         // $('#circle').siblings().css('transform', 'rotateY(360deg)');
         // $('.pageNavigation').children('div[id] = "circle"]').css('transform', 'rotateY(360deg)');
@@ -47,7 +53,7 @@ $(function() {
 
         $(headers).hide(800);
         $(images).hide(800);
-        $('.portfolioNavigation').hide(800);
+        $('.portfolioNavigation').hide();
         $('.aboutMeLink').parent().siblings()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
@@ -57,19 +63,19 @@ $(function() {
 
     $('#fa-times-aboutMe').click(function() {
         $("[class='aboutMeClick']").hide();
-        $('.aboutMeBlurb').children().hide();
-        $('#fa-times-aboutMe').hide();
+        $('.aboutMeBlurb').children().slideUp(1000);
+        $('#fa-times-aboutMe').fadeOut(1000);
         $('.pageNavigation').children()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
         // $('.pageNavigation').children()
         //     .css({ 'border': '1px solid purple' });
         // .css({ 'box-shadow': '0px 0px 0px 0px' });
-        $("[id='pageNavigation']").show();
+        $("[id='pageNavigation']").fadeIn(2000);
     });
 
     $('#whoAmI').click(function() {
-        $('.aboutMePartI').show().siblings().hide();
+        $('.aboutMePartI').fadeIn(1000).siblings().hide();
         $('#whoAmI')
             .parent()
             .css({ 'border': '1px dotted #99e052' })
@@ -82,7 +88,7 @@ $(function() {
     });
 
     $('#whatMovesMe').click(function() {
-        $('.aboutMePartII').show().siblings().hide();
+        $('.aboutMePartII').fadeIn(1000).siblings().hide();
         $('#whatMovesMe')
             .parent()
             .css({ 'border': '1px dotted #99e052' })
@@ -93,7 +99,7 @@ $(function() {
     });
 
     $('#otherTidBits').click(function() {
-        $('.aboutMePartIII').show().siblings().hide();
+        $('.aboutMePartIII').fadeIn(1000).siblings().hide();
         $('#otherTidBits')
             .parent()
             .css({ 'border': '1px dotted #99e052' })
