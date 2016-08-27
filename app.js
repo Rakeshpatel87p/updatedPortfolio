@@ -12,18 +12,18 @@ var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
-    setInterval(updateGradient, 10);;
+    // setInterval(updateGradient, 10);
 
-    $('.fa-envelope-o').hover(function() {
-        $('.fa-linkedin').css('opacity', 1);
-        $('.fa-github').css('opacity', 1);
+    // $('.fa-envelope-o').hover(function() {
+    //     $('.fa-linkedin').css('opacity', 1);
+    //     $('.fa-github').css('opacity', 1);
 
-    });
+    // });
 
-    $('.contactLinks').mouseout(function() {
-        $('.fa-linkedin').css('opacity', 0);
-        $('.fa-github').css('opacity', 0)
-    })
+    // $('.contactLinks').mouseout(function() {
+    //     $('.fa-linkedin').css('opacity', 0);
+    //     $('.fa-github').css('opacity', 0)
+    // })
 
     $('.aboutMeLink').click(function() {
         $("[id='pageNavigation']").hide();
@@ -60,7 +60,7 @@ $(function() {
         i = 0;
 
     });
-
+    // Close button for AboutMe section
     $('#fa-times-aboutMe').click(function() {
         $("[class='aboutMeClick']").hide();
         $('.aboutMeBlurb').children().slideUp(1000);
@@ -108,15 +108,15 @@ $(function() {
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
     });
-
+    // Opens Portfolio
     $('.portfolioLink').click(function() {
-        $('.aboutMeBlurb').children().hide();
+        $('.aboutMeBlurb').children().fadeOut(1000);
         $('.portfolioNavigation').show();
-        $(images[i]).show();
-        $(headers[i]).show();
-        $('#navigateBack').show().siblings().hide();
-        $('#navigateForward').show().siblings().hide();
-        $('#fa-times-portfolio').show();
+        $(images[i]).slideDown(1000);
+        $(headers[i]).slideDown(1000);
+        $('#navigateBack').fadeIn(1000).siblings().hide();
+        $('#navigateForward').fadeIn(2000).siblings().hide();
+        $('#fa-times-portfolio-closeButton').show();
         $('.portfolioNavigationCircles').show();
         $('.portfolioLink').parent()
             .css({ 'border': '1px dotted #99e052' })
@@ -124,30 +124,30 @@ $(function() {
             .siblings()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
-        $(navigationCircles[i]).css('color', 'gold').siblings().css('color', 'white');
+        $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
         i = 0;
 
     });
-
-    $('#fa-times-portfolio').click(function() {
+    // Close button for Portfolio
+    $('#fa-times-portfolio-closeButton').click(function() {
         $('#navigateBack').hide();
         $('#navigateForward').hide();
-        $(images).hide();
-        $(headers).hide();
+        $(images).slideUp(1000);
+        $(headers).slideUp(1000);
         // $('.portfolioContents').children().hide();
-        $('#fa-times-portfolio').hide();
+        $('#fa-times-portfolio-closeButton').hide();
         $('#fa-times-aboutMe').hide();
         $('.portfolioNavigationCircles').hide();
         $('.pageNavigation').children()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
-        $("[id='pageNavigation']").show();
+        $("[id='pageNavigation']").fadeIn(2000);
         $('.pageNavigation').children()
             .css({ 'border': '1px solid purple' })
             .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").show();
     });
-
+    // Portfolio Navigation 
     $('#navigateForward').click(function() {
         if (i < 3) {
             i++;
@@ -168,11 +168,11 @@ $(function() {
         }
 
     });
-
+    // Cycles through Portfolio contents
     function fill(i) {
-        return $(images[i]).show().siblings().hide(),
-            $(headers[i]).show().siblings().hide(),
-            $(navigationCircles[i]).css('color', 'gold').siblings().css('color', 'white');
+        return $(images[i]).fadeIn(500).siblings().hide(),
+            $(headers[i]).fadeIn(500).siblings().hide(),
+            $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
     }
 
 });

@@ -117,7 +117,7 @@ hr {
 }
 
 #fa-times-aboutMe,
-#fa-times-portfolio {
+#fa-times-portfolio-closeButton {
     display: none;
     color: #52e0e0;
     cursor: pointer;
@@ -138,12 +138,10 @@ hr {
 
 .fa-linkedin {
     color: #4c66a4;
-    opacity: 0;
 }
 
 .fa-github {
     color: purple;
-    opacity: 0;
 }
 
 .fa-envelope-o {
@@ -232,8 +230,14 @@ hr {
     height: 150px;
 }
 #tidBitParagraph {
-    margin-top: 14%;
+    margin-top: 12%;
 }
+
+.aboutMeParagraphOne,
+.aboutMeParagraphTwo {
+    margin-top: 10%;
+}
+
 .portfolioHeaders > h2,
 .portfolioImages > img {
     display: none;
@@ -252,7 +256,7 @@ hr {
 #navigateBack,
 #navigateForward {
     display: none;
-    color: #99e052;
+    color: orange;
 }
 .portfolioNavigationCircles {
     display: none;
@@ -296,12 +300,13 @@ hr {
     .aboutMePartI,
     .aboutMePartIII,
     .aboutMePartII {
-        width: 31%;
-        margin-left: 33%;
+        width: 46%;
+        margin-left: 25%;
+        margin-top: -2%;
     }
     
     .portfolioImages > img {
-        width: 50%;
+        width: 41%;
     }
     
     .socialIconsList {
