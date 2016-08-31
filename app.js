@@ -11,16 +11,6 @@ var images = $(".portfolioImages > img").toArray();
 var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
-var text = "RAKESH PATEL";
-
-for(var i in text) { 
-  if(text[i] === " ") {
-    $(".wavetext").append( $("<span>").html("&nbsp;") ); 
-  } else {  
-    $(".wavetext").append( $("<span>").text(text[i]) ); 
-  }
-}
-
 $(function() {
     setInterval(updateGradient, 10);
 
@@ -36,28 +26,27 @@ $(function() {
     // })
 
     $('.aboutMeLink').click(function() {
+        $('.circle').addClass('rotationEffectOne');
         $("[id='pageNavigation']").hide();
         $("[class='aboutMeClick']").fadeIn(1000);
         $('.aboutMePartI').slideDown(1000).siblings().hide();
         $('#whoAmI')
             .parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
-            .css('transform', 'rotateX(360deg)')
+            .addClass('circleAfterClick')
         $('#fa-times-aboutMe').show();
-        $('.pageNavigation').find('div').css({'transform': 'rotateY(360deg)'});
+        // $('.pageNavigation').find('div').css({ 'transform': 'rotateY(360deg)' });
         console.log($('.pageNavigation').find('div'))
-        // $('.aboutMeLink').css('transform', 'rotateX(360deg)');
-        // $('.pageNavigation').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
-        // $("[class='aboutMeClick']").css('transform', 'rotateX(360deg)');
-        // $('#circle').children('.aboutMeClick').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
-        // Not Targeting DOM Elements for Spinning Circle
-        // $('#circle').siblings().css('transform', 'rotateY(360deg)');
-        // $('.pageNavigation').children('div[id] = "circle"]').css('transform', 'rotateY(360deg)');
-        // $("[class='aboutMeClick']").css('transform', 'rotateY(360deg)')
-        // .siblings().css('transform', 'rotateY(360deg)');
-        // $('.aboutMeLink').parent().css('transform', 'rotateY(360deg)');
-        // $('#whatMovesMe').parent().css('transform', 'rotateY(360deg)');
+            // $('.aboutMeLink').css('transform', 'rotateX(360deg)');
+            // $('.pageNavigation').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
+            // $("[class='aboutMeClick']").css('transform', 'rotateX(360deg)');
+            // $('#circle').children('.aboutMeClick').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
+            // Not Targeting DOM Elements for Spinning Circle
+            // $('#circle').siblings().css('transform', 'rotateY(360deg)');
+            // $('.pageNavigation').children('div[id] = "circle"]').css('transform', 'rotateY(360deg)');
+            // $("[class='aboutMeClick']").css('transform', 'rotateY(360deg)')
+            // .siblings().css('transform', 'rotateY(360deg)');
+            // $('.aboutMeLink').parent().css('transform', 'rotateY(360deg)');
+            // $('#whatMovesMe').parent().css('transform', 'rotateY(360deg)');
 
 
 
@@ -66,20 +55,19 @@ $(function() {
         $('.portfolioNavigation').hide();
         $('.aboutMeLink').parent().siblings()
             .css({ 'border': '1px solid purple' })
-            .css({'transition': 'box-shadow 1s ease-out'})
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({ 'transition': 'box-shadow 1s ease-out' })
         i = 0;
 
     });
     // Close button for AboutMe section
     $('#fa-times-aboutMe').click(function() {
+        $('.pageNavigation').find('div').removeClass('rotationEffect');
+        // $('.pageNavigation').find('div').addClass('rotationEffectTwo');
         $("[class='aboutMeClick']").hide();
         $('.aboutMeBlurb').children().slideUp(1000);
         $('#fa-times-aboutMe').fadeOut(1000);
         $('.pageNavigation').children()
-            .css({ 'border': '1px solid purple' })
-            .css({'transition': 'box-shadow 1s ease-out'})
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .removeClass('circleAfterClick');
         $("[id='pageNavigation']").fadeIn(2000);
     });
 
@@ -87,41 +75,31 @@ $(function() {
         $('.aboutMePartI').fadeIn(1000).siblings().hide();
         $('#whoAmI')
             .parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
-            .css('transform', 'rotateX(360deg)')
-
-        .siblings()
-            .css({ 'border': '1px solid purple' })
-            .css({'transition': 'box-shadow 1s ease-out'})
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .addClass('circleAfterClick')
+            .siblings()
+            .removeClass('circleAfterClick');
     });
 
     $('#whatMovesMe').click(function() {
         $('.aboutMePartII').fadeIn(1000).siblings().hide();
         $('#whatMovesMe')
             .parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
+            .addClass('circleAfterClick')
             .siblings()
-            .css({ 'border': '1px solid purple' })
-            .css({'transition': 'box-shadow 1s ease-out'})
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .removeClass('circleAfterClick');
     });
 
     $('#otherTidBits').click(function() {
         $('.aboutMePartIII').fadeIn(1000).siblings().hide();
         $('#otherTidBits')
             .parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
+            .addClass('circleAfterClick')
             .siblings()
-            .css({ 'border': '1px solid purple' })
-            .css({'transition': 'box-shadow 1s ease-out'})
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .removeClass('circleAfterClick');
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
+        $('.pageNavigation').find('div').css({ 'transform': 'rotateY(360deg)' });
         $('.aboutMeBlurb').children().fadeOut(1000);
         $('.portfolioNavigation').show();
         $(images[i]).slideDown(1000);
@@ -131,11 +109,13 @@ $(function() {
         $('#fa-times-portfolio-closeButton').show();
         $('.portfolioNavigationCircles').show();
         $('.portfolioLink').parent()
-            .css({ 'border': '1px dotted #99e052' })
-            .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
+            .addClass('circleAfterClick')
+            // .css({ 'border': '1px dotted #99e052' })
+            // .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
             .siblings()
-            .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .removeClass('circleAfterClick');
+        // .css({ 'border': '1px solid purple' })
+        // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
         i = 0;
 
@@ -151,12 +131,13 @@ $(function() {
         $('#fa-times-aboutMe').hide();
         $('.portfolioNavigationCircles').hide();
         $('.pageNavigation').children()
-            .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .removeClass('circleAfterClick')
+            // .css({ 'border': '1px solid purple' })
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").fadeIn(2000);
-        $('.pageNavigation').children()
-            .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+        // $('.pageNavigation').children()
+        //     .css({ 'border': '1px solid purple' })
+        //     .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").show();
     });
     // Portfolio Navigation 

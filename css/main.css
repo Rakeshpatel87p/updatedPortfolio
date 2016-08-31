@@ -37,6 +37,14 @@ hr {
     width: 3%;
 }
 
+.rotationEffectOne {
+    transform: rotateY(360deg)
+}
+
+.rotationEffectTwo {
+    transform: rotateY(-360deg);
+}
+
 .nameDefault {
     fill: none;
     text-transform: uppercase;
@@ -165,7 +173,7 @@ hr {
     cursor: pointer;
 }
 
-#circle {
+.circle {
     width: 100px;
     height: 100px;
     -moz-border-radius: 50px;
@@ -175,16 +183,22 @@ hr {
     border: 1px solid purple;
     margin: 2%;
     transition: box-shadow 1s ease-out;
+    box-shadow: none;
 }
 
-#circle:hover {
+.circleAfterClick {
+    border: 1px dotted #99e052;
+    box-shadow: 1px 1px 3px 1px #52e0e0;
+}
+
+.circle:hover {
     transition: 1s;
     transition-property: border, transform;
     border: 1px dotted #99e052;
     box-shadow: 1px 1px 6px 2px #52e0e0;
 }
 
-#circle > h3 {
+.circle > h3 {
     margin-top: 40%;
 }
 
@@ -287,7 +301,7 @@ hr {
         margin-top: -1%;
     }
     
-    #circle {
+    .circle {
         margin: 2% 2%;
         display: inline-block;
     }
