@@ -14,13 +14,10 @@ var i = 0;
 $(function() {
     // setInterval(updateGradient, 10);
 
-    $(".trigger").hover(function() {
-        $(".menu").addClass("active");
+    $(".trigger").click(function() {
+        $(".menu").toggleClass("active");
     });
 
-    $(document).on('click', function(){
-        $(this).removeClass('active');
-    })
     // $('.fa-envelope-o').hover(function() {
     //     $('.fa-linkedin').fadeIn(1000);
     //     $('.fa-github').fadeIn(1000);
