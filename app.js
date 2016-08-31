@@ -16,6 +16,7 @@ $(function() {
 
     $(".trigger").click(function() {
         $(".menu").toggleClass("active");
+        // $('.nameDefault').animate({ 'padding-top': '15%' }, 1000)
     });
 
     // $('.fa-envelope-o').hover(function() {
@@ -121,7 +122,7 @@ $(function() {
     });
     // Close button for Portfolio
     $('#fa-times-portfolio-closeButton').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '6%' }, 1000)
+        $('.nameDefault').animate({ 'padding-top': '15%' }, 1000)
         $('.circle').removeClass('rotationEffectOne');
         $('#navigateBack').hide();
         $('#navigateForward').hide();
