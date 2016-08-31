@@ -11,6 +11,16 @@ var images = $(".portfolioImages > img").toArray();
 var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
+var text = "RAKESH PATEL";
+
+for(var i in text) { 
+  if(text[i] === " ") {
+    $(".wavetext").append( $("<span>").html("&nbsp;") ); 
+  } else {  
+    $(".wavetext").append( $("<span>").text(text[i]) ); 
+  }
+}
+
 $(function() {
     // setInterval(updateGradient, 10);
 

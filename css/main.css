@@ -38,63 +38,69 @@ hr {
 }
 
 .nameDefault {
-    /*    font-family: 'Josefin Sans', sans-serif;
-*/
-    /*    font-size: 46px;
-    color: #ffcd00;*/
+    fill: none;
     text-transform: uppercase;
     padding-top: 3%;
 }
 
+.text {
+    stroke-width: 6;
+    stroke-linejoin: round;
+    stroke-dasharray: 70 330;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 6s infinite linear;
+    animation: stroke 6s infinite linear;
+}
 
-/*
- This is my very first SCSS experiment
-*/
+.text:nth-child(5n + 1) {
+    stroke: #e05252;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+}
 
+.text:nth-child(5n + 2) {
+    stroke: #99e052;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s;
+}
 
-/*
- This is my very first SCSS experiment
-*/
+.text:nth-child(5n + 3) {
+    stroke: #52e0e0;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s;
+}
 
-/*@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
-@keyframes wave {
-    from {
-        transform: translateY(0);
-        color: white;
-    }
-    to {
-        transform: translateY( -90px);
+.text:nth-child(5n + 4) {
+    stroke: #9952e0;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s;
+}
+
+.text:nth-child(5n + 5) {
+    stroke: #e05252;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
     }
 }
 
-.nameDefault {
-    margin-top: 10em;
-    text-align: center;
-}
-
-.nameDefault span {
-    display: inline-block;
-    font-family: "Fredoka One", sans-serif;
-    font-size: 70px;
-    animation-duration: 2s;
-    animation-name: wave;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@for $i from 0 to 40 {
-    .nameDefault:nth-child( 20n + #{$i}) {
-        animation-delay: -#{(40 - $i) * 2 * 2 / 40 }s;
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: -400;
     }
-}*/
+}
 
 #nameGradient {
+    font-weight: 500;
+    font-size: 6.3em;
     display: table;
     margin: 0 auto;
     /*  font-family: "Roboto Slab";
 */
-    font-weight: 500;
-    font-size: 6.3em;
     background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -232,12 +238,10 @@ hr {
 #tidBitParagraph {
     margin-top: 12%;
 }
-
 .aboutMeParagraphOne,
 .aboutMeParagraphTwo {
     margin-top: 10%;
 }
-
 .portfolioHeaders > h2,
 .portfolioImages > img {
     display: none;

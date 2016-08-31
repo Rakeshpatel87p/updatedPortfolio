@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "lessc --source-map css/index.less $npm_package_name.$npm_package_version.css",
+    "clean:css": "rm -f $npm_package_name.$npm_package_version.css /$npm_package_name.$npm_package_version.css.map"
+ 
   },
   "author": "",
   "license": "ISC",
