@@ -12,13 +12,21 @@ var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
-    setInterval(updateGradient, 10);
+    // setInterval(updateGradient, 10);
 
-    $('.fa-envelope-o').hover(function() {
-        $('.fa-linkedin').fadeIn(1000);
-        $('.fa-github').fadeIn(1000);
-
+    $(".trigger").hover(function() {
+        $(".menu").addClass("active");
     });
+
+    $(document).on('click', function(){
+        $(this).removeClass('active');
+    })
+    // $('.fa-envelope-o').hover(function() {
+    //     $('.fa-linkedin').fadeIn(1000);
+    //     $('.fa-github').fadeIn(1000);
+
+    // });
+
 
     // $('.contactLinks').mouseout(function() {
     //     $('.fa-linkedin').css('opacity', 0);
@@ -26,7 +34,7 @@ $(function() {
     // })
 
     $('.aboutMeLink').click(function() {
-        $('.circle').addClass('rotationEffectOne');
+        $('.circle').addClass('rotationEffectOne')
         $("[id='pageNavigation']").hide();
         $("[class='aboutMeClick']").fadeIn(1000);
         $('.aboutMePartI').slideDown(1000).siblings().hide();
@@ -53,15 +61,12 @@ $(function() {
         $(headers).hide(800);
         $(images).hide(800);
         $('.portfolioNavigation').hide();
-        $('.aboutMeLink').parent().siblings()
-            .css({ 'border': '1px solid purple' })
-            .css({ 'transition': 'box-shadow 1s ease-out' })
         i = 0;
 
     });
     // Close button for AboutMe section
     $('#fa-times-aboutMe').click(function() {
-        $('.pageNavigation').find('div').removeClass('rotationEffect');
+        $('.circle').removeClass('rotationEffectOne');
         // $('.pageNavigation').find('div').addClass('rotationEffectTwo');
         $("[class='aboutMeClick']").hide();
         $('.aboutMeBlurb').children().slideUp(1000);
@@ -99,29 +104,28 @@ $(function() {
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
-        $('.pageNavigation').find('div').css({ 'transform': 'rotateY(360deg)' });
+        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000)
+        $('.circle').addClass('rotationEffectOne');
         $('.aboutMeBlurb').children().fadeOut(1000);
         $('.portfolioNavigation').show();
-        $(images[i]).slideDown(1000);
-        $(headers[i]).slideDown(1000);
+        $(images[i]).slideDown(2000);
+        $(headers[i]).slideDown(2000);
         $('#navigateBack').fadeIn(1000).siblings().hide();
         $('#navigateForward').fadeIn(2000).siblings().hide();
         $('#fa-times-portfolio-closeButton').show();
         $('.portfolioNavigationCircles').show();
         $('.portfolioLink').parent()
             .addClass('circleAfterClick')
-            // .css({ 'border': '1px dotted #99e052' })
-            // .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
             .siblings()
             .removeClass('circleAfterClick');
-        // .css({ 'border': '1px solid purple' })
-        // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
         i = 0;
 
     });
     // Close button for Portfolio
     $('#fa-times-portfolio-closeButton').click(function() {
+        $('.nameDefault').animate({ 'padding-top': '6%' }, 1000)
+        $('.circle').removeClass('rotationEffectOne');
         $('#navigateBack').hide();
         $('#navigateForward').hide();
         $(images).slideUp(1000);
