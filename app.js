@@ -12,7 +12,7 @@ var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
-    // setInterval(updateGradient, 10);
+    setInterval(updateGradient, 10);
 
     $(".trigger").click(function() {
         $(".menu").toggleClass("active");
