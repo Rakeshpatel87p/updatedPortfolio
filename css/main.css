@@ -40,7 +40,7 @@ hr {
 .nameDefault {
     fill: none;
     text-transform: uppercase;
-    padding-top: 3%;
+    padding-top: 6%;
 }
 
 .text {
@@ -147,12 +147,13 @@ hr {
 }
 
 .fa-github {
-    color: purple;
+    color: orange;
 }
 
 .fa-envelope-o {
     color: #1fc08e;
     opacity: 0.5;
+    -webkit-transition: 1s;
 }
 
 .fa-envelope-o:hover {
@@ -173,16 +174,14 @@ hr {
     transition-property: border, transform;
     border: 1px solid purple;
     margin: 2%;
+    transition: box-shadow 1s ease-out;
 }
 
 #circle:hover {
-    /*    -webkit-transform: rotateZ(360deg);
-    -ms-transform: rotateZ(360deg);
-    transform: rotateZ(360deg);*/
     transition: 1s;
     transition-property: border, transform;
     border: 1px dotted #99e052;
-    box-shadow: 1px 1px 3px 1px #52e0e0;
+    box-shadow: 1px 1px 6px 2px #52e0e0;
 }
 
 #circle > h3 {

@@ -22,13 +22,13 @@ for(var i in text) {
 }
 
 $(function() {
-    // setInterval(updateGradient, 10);
+    setInterval(updateGradient, 10);
 
-    // $('.fa-envelope-o').hover(function() {
-    //     $('.fa-linkedin').css('opacity', 1);
-    //     $('.fa-github').css('opacity', 1);
+    $('.fa-envelope-o').hover(function() {
+        $('.fa-linkedin').fadeIn(1000);
+        $('.fa-github').fadeIn(1000);
 
-    // });
+    });
 
     // $('.contactLinks').mouseout(function() {
     //     $('.fa-linkedin').css('opacity', 0);
@@ -66,7 +66,8 @@ $(function() {
         $('.portfolioNavigation').hide();
         $('.aboutMeLink').parent().siblings()
             .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({'transition': 'box-shadow 1s ease-out'})
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
         i = 0;
 
     });
@@ -77,10 +78,8 @@ $(function() {
         $('#fa-times-aboutMe').fadeOut(1000);
         $('.pageNavigation').children()
             .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
-        // $('.pageNavigation').children()
-        //     .css({ 'border': '1px solid purple' });
-        // .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({'transition': 'box-shadow 1s ease-out'})
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").fadeIn(2000);
     });
 
@@ -94,7 +93,8 @@ $(function() {
 
         .siblings()
             .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({'transition': 'box-shadow 1s ease-out'})
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
     });
 
     $('#whatMovesMe').click(function() {
@@ -105,7 +105,8 @@ $(function() {
             .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
             .siblings()
             .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({'transition': 'box-shadow 1s ease-out'})
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
     });
 
     $('#otherTidBits').click(function() {
@@ -116,7 +117,8 @@ $(function() {
             .css({ 'box-shadow': '1px 1px 3px 1px #52e0e0' })
             .siblings()
             .css({ 'border': '1px solid purple' })
-            .css({ 'box-shadow': '0px 0px 0px 0px' });
+            .css({'transition': 'box-shadow 1s ease-out'})
+            // .css({ 'box-shadow': '0px 0px 0px 0px' });
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
@@ -207,7 +209,7 @@ var step = 0;
 var colorIndices = [0, 1, 2, 3];
 
 //transition speed
-var gradientSpeed = 0.002;
+var gradientSpeed = 0.001;
 
 function updateGradient() {
 
