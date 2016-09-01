@@ -1,35 +1,17 @@
-// Portfolio links
-// Contact links hover effect
-// Spinning circles on click
-// Better circle hover styling
-// Timed transitions from About Me links
-
-// Wavy name text - learn less
-
+// Portfolio contents
 var headers = $(".portfolioHeaders > h2").toArray();
 var images = $(".portfolioImages > img").toArray();
 var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
 var i = 0;
 
 $(function() {
+    // Changes background color
     setInterval(updateGradient, 10);
-
+    // For top contact menu
     $(".trigger").click(function() {
         $(".menu").toggleClass("active");
-        // $('.nameDefault').animate({ 'padding-top': '15%' }, 1000)
     });
 
-    // $('.fa-envelope-o').hover(function() {
-    //     $('.fa-linkedin').fadeIn(1000);
-    //     $('.fa-github').fadeIn(1000);
-
-    // });
-
-
-    // $('.contactLinks').mouseout(function() {
-    //     $('.fa-linkedin').css('opacity', 0);
-    //     $('.fa-github').css('opacity', 0)
-    // })
 
     $('.aboutMeLink').click(function() {
         $('.circle').addClass('rotationEffectOne')
@@ -40,22 +22,6 @@ $(function() {
             .parent()
             .addClass('circleAfterClick')
         $('#fa-times-aboutMe').show();
-        // $('.pageNavigation').find('div').css({ 'transform': 'rotateY(360deg)' });
-        console.log($('.pageNavigation').find('div'))
-            // $('.aboutMeLink').css('transform', 'rotateX(360deg)');
-            // $('.pageNavigation').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
-            // $("[class='aboutMeClick']").css('transform', 'rotateX(360deg)');
-            // $('#circle').children('.aboutMeClick').find('.aboutMeClick').css('transform', 'rotateX(360deg)');
-            // Not Targeting DOM Elements for Spinning Circle
-            // $('#circle').siblings().css('transform', 'rotateY(360deg)');
-            // $('.pageNavigation').children('div[id] = "circle"]').css('transform', 'rotateY(360deg)');
-            // $("[class='aboutMeClick']").css('transform', 'rotateY(360deg)')
-            // .siblings().css('transform', 'rotateY(360deg)');
-            // $('.aboutMeLink').parent().css('transform', 'rotateY(360deg)');
-            // $('#whatMovesMe').parent().css('transform', 'rotateY(360deg)');
-
-
-
         $(headers).hide(800);
         $(images).hide(800);
         $('.portfolioNavigation').hide();
@@ -128,18 +94,12 @@ $(function() {
         $('#navigateForward').hide();
         $(images).slideUp(1000);
         $(headers).slideUp(1000);
-        // $('.portfolioContents').children().hide();
         $('#fa-times-portfolio-closeButton').hide();
         $('#fa-times-aboutMe').hide();
         $('.portfolioNavigationCircles').hide();
         $('.pageNavigation').children()
             .removeClass('circleAfterClick')
-            // .css({ 'border': '1px solid purple' })
-            // .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").fadeIn(2000);
-        // $('.pageNavigation').children()
-        //     .css({ 'border': '1px solid purple' })
-        //     .css({ 'box-shadow': '0px 0px 0px 0px' });
         $("[id='pageNavigation']").show();
     });
     // Portfolio Navigation 
@@ -173,22 +133,9 @@ $(function() {
 });
 
 var colors = new Array(
-    // Control these colors
     [0, 0, 0], [51, 0, 51], [0, 0, 51], [51, 0, 102], [25, 0, 51], [51, 0, 25]);
 
-// [62,35,255],
-// [60,255,60],
-// [255,35,98],
-// [45,175,230],
-// [255,0,255],
-// [255,128,0]);
-
 var step = 0;
-//color table indices for: 
-// current color left
-// next color left
-// current color right
-// next color right
 var colorIndices = [0, 1, 2, 3];
 
 //transition speed
@@ -223,9 +170,6 @@ function updateGradient() {
         step %= 1;
         colorIndices[0] = colorIndices[1];
         colorIndices[2] = colorIndices[3];
-
-        //pick two new target color indices
-        //do not pick the same as the current one
         colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
         colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
 
