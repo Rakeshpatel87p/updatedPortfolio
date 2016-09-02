@@ -68,8 +68,10 @@ $(function() {
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000)
+        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000);
         $('.circle').addClass('rotationEffectOne');
+        $('.portfolioLink').hide();
+        $('.circle').removeClass('circleOutline');
         $('.aboutMeBlurb').children().fadeOut(1000);
         $('.portfolioNavigation').show();
         $(images[i]).slideDown(2000);
@@ -88,7 +90,9 @@ $(function() {
     });
     // Close button for Portfolio
     $('#fa-times-portfolio-closeButton').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '15%' }, 1000)
+        $('.nameDefault').animate({ 'padding-top': '15%' }, 1000);
+        $('.portfolioLink').show();
+        $('.circle').addClass('circleOutline');
         $('.circle').removeClass('rotationEffectOne');
         $('#navigateBack').hide();
         $('#navigateForward').hide();
@@ -129,6 +133,10 @@ $(function() {
             $(headers[i]).fadeIn(500).siblings().hide(),
             $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
     }
+
+    $('.blogLink').mouseover(function(event){
+        $('#blogPopUp').show().fadeOut(2000)
+    });
 
 });
 
