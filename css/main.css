@@ -281,7 +281,7 @@
         box-shadow: 1px 1px 3px 1px #52e0e0;
     }
     
-    .circle:hover {
+    .circleOutline:hover {
         transition: 1s;
         transition-property: border, transform;
         border: 1px dotted #99e052;
