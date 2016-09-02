@@ -67,7 +67,9 @@ $(function() {
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000)
+        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000);
+        $('.circle').removeClass('circleOutline');
+        $('.portfolioLink').hide();
         $('.circle').addClass('rotationEffectOne');
         $('.aboutMeBlurb').children().fadeOut(1000);
         $('.portfolioNavigation').show();
@@ -88,12 +90,13 @@ $(function() {
     // Close button for Portfolio
     $('#fa-times-portfolio-closeButton').click(function() {
         $('.nameDefault').animate({ 'padding-top': '15%' }, 1000)
+        $('.circle').addClass('circleOutline');
         $('.circle').removeClass('rotationEffectOne');
+        $('.portfolioLink').hide();
         $('#navigateBack').hide();
         $('#navigateForward').hide();
         $(images).slideUp(1000);
         $(headers).slideUp(1000);
-        // $('.portfolioContents').children().hide();
         $('#fa-times-portfolio-closeButton').hide();
         $('#fa-times-aboutMe').hide();
         $('.portfolioNavigationCircles').hide();
@@ -129,6 +132,12 @@ $(function() {
             $(headers[i]).fadeIn(500).siblings().hide(),
             $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
     }
+
+    $('.blog').mouseover(function(event){
+        var xCursorPosition = event.pageX;
+        var yCursorPosition = event.pageY;
+        $('#blogPopUp').show().fadeOut(2000).css({'top': yCursorPosition, 'left' : xCursorPosition});
+    })
 
 });
 
