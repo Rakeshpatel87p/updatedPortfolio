@@ -90,7 +90,7 @@ $(function() {
     });
     // Close button for Portfolio
     $('#fa-times-portfolio-closeButton').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '15%' }, 1000);
+        $('.nameDefault').animate({ 'padding-top': '11%' }, 1000);
         $('.portfolioLink').show();
         $('.circle').addClass('circleOutline');
         $('.circle').removeClass('rotationEffectOne');
