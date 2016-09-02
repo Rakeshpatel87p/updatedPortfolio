@@ -6,7 +6,8 @@ var i = 0;
 
 $(function() {
     // Changes background color
-    setInterval(updateGradient, 10);
+    // setInterval(updateGradient, 10);
+    
     // For top contact menu
     $(".trigger").click(function() {
         $(".menu").toggleClass("active");
@@ -31,7 +32,6 @@ $(function() {
     // Close button for AboutMe section
     $('#fa-times-aboutMe').click(function() {
         $('.circle').removeClass('rotationEffectOne');
-        // $('.pageNavigation').find('div').addClass('rotationEffectTwo');
         $("[class='aboutMeClick']").hide();
         $('.aboutMeBlurb').children().slideUp(1000);
         $('#fa-times-aboutMe').fadeOut(1000);
