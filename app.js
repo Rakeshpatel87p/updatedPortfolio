@@ -1,13 +1,13 @@
 // Portfolio contents
-var headers = $(".portfolioHeaders > h2").toArray();
-var images = $(".portfolioImages > img").toArray();
-var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
-var i = 0;
+// var headers = $(".portfolioHeaders > h2").toArray();
+// var images = $(".portfolioImages > img").toArray();
+// var navigationCircles = $('.portfolioNavigationCircles').children().toArray();
+// var i = 0;
 
 $(function() {
     // Changes background color
-    // setInterval(updateGradient, 10);
-    
+    setInterval(updateGradient, 10);
+
     // For top contact menu
     $(".trigger").click(function() {
         $(".menu").toggleClass("active");
@@ -17,23 +17,23 @@ $(function() {
     $('.aboutMeLink').click(function() {
         $('.circle').addClass('rotationEffectOne')
         $("[id='pageNavigation']").hide();
-        $("[class='aboutMeClick']").fadeIn(1000);
-        $('.aboutMePartI').slideDown(1000).siblings().hide();
+        $("[class='aboutMeClick']").fadeIn(100);
+        $('.aboutMePartI').slideDown(2000).siblings().hide();
         $('#whoAmI')
             .parent()
             .addClass('circleAfterClick')
         $('#fa-times-aboutMe').show();
-        $(headers).hide(800);
-        $(images).hide(800);
-        $('.portfolioNavigation').hide();
-        i = 0;
+        $('.wrapper').css('display', 'none');
+        $('.aboutMeBlurb').children().children().fadeIn(500);
+        $('.nameDefault').animate({ 'padding-top': '11%' }, 1000);
 
     });
     // Close button for AboutMe section
     $('#fa-times-aboutMe').click(function() {
         $('.circle').removeClass('rotationEffectOne');
         $("[class='aboutMeClick']").hide();
-        $('.aboutMeBlurb').children().slideUp(1000);
+        $('.aboutMeBlurb').children().slideUp(1500);
+        $('.aboutMeBlurb').children().children().fadeOut(500);
         $('#fa-times-aboutMe').fadeOut(1000);
         $('.pageNavigation').children()
             .removeClass('circleAfterClick');
@@ -68,73 +68,61 @@ $(function() {
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '2%' }, 1000);
+        $('.nameDefault').animate({ 'padding-top': '5%' }, 1000);
         $('.circle').addClass('rotationEffectOne');
-        $('.portfolioLink').hide();
-        $('.circle').removeClass('circleOutline');
         $('.aboutMeBlurb').children().fadeOut(1000);
-        $('.portfolioNavigation').show();
-        $(images[i]).slideDown(2000);
-        $(headers[i]).slideDown(2000);
-        $('#navigateBack').fadeIn(1000).siblings().hide();
-        $('#navigateForward').fadeIn(2000).siblings().hide();
+        $('.wrapper').css('display', 'flex');
         $('#fa-times-portfolio-closeButton').show();
-        $('.portfolioNavigationCircles').show();
-        $('.portfolioLink').parent()
-            .addClass('circleAfterClick')
-            .siblings()
-            .removeClass('circleAfterClick');
-        $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
-        i = 0;
 
     });
     // Close button for Portfolio
-    $('#fa-times-portfolio-closeButton').click(function() {
-        $('.nameDefault').animate({ 'padding-top': '11%' }, 1000);
-        $('.portfolioLink').show();
-        $('.circle').addClass('circleOutline');
-        $('.circle').removeClass('rotationEffectOne');
-        $('#navigateBack').hide();
-        $('#navigateForward').hide();
-        $(images).slideUp(1000);
-        $(headers).slideUp(1000);
-        $('#fa-times-portfolio-closeButton').hide();
-        $('#fa-times-aboutMe').hide();
-        $('.portfolioNavigationCircles').hide();
-        $('.pageNavigation').children()
-            .removeClass('circleAfterClick')
-        $("[id='pageNavigation']").fadeIn(2000);
-        $("[id='pageNavigation']").show();
-    });
+    // $('#fa-times-portfolio-closeButton').click(function() {
+    //     $('.nameDefault').animate({ 'padding-top': '11%' }, 1000);
+    //     $('.portfolioLink').show();
+    //     $('.circle').addClass('circleOutline');
+    //     $('.circle').removeClass('rotationEffectOne');
+    //     $('#navigateBack').hide();
+    //     $('#navigateForward').hide();
+    //     $(images).slideUp(1000);
+    //     $(headers).slideUp(1000);
+    //     $('#fa-times-portfolio-closeButton').hide();
+    //     $('#fa-times-aboutMe').hide();
+    //     $('.portfolioNavigationCircles').hide();
+    //     $('.pageNavigation').children()
+    //         .removeClass('circleAfterClick')
+    //     $("[id='pageNavigation']").fadeIn(2000);
+    //     $("[id='pageNavigation']").show();
+    // });
+
     // Portfolio Navigation 
-    $('#navigateForward').click(function() {
-        if (i < 3) {
-            i++;
-            fill(i);
-        } else if (i == 3) {
-            i = 0;
-            fill(i);
-        };
-    });
+    // $('#navigateForward').click(function() {
+    //     if (i < 3) {
+    //         i++;
+    //         fill(i);
+    //     } else if (i == 3) {
+    //         i = 0;
+    //         fill(i);
+    //     };
+    // });
 
-    $('#navigateBack').click(function() {
-        if (i >= 1) {
-            i = i - 1;
-            fill(i);
-        } else if (i == 0) {
-            i = 3;
-            fill(i);
-        }
+    // $('#navigateBack').click(function() {
+    //     if (i >= 1) {
+    //         i = i - 1;
+    //         fill(i);
+    //     } else if (i == 0) {
+    //         i = 3;
+    //         fill(i);
+    //     }
 
-    });
+    // });
     // Cycles through Portfolio contents
-    function fill(i) {
-        return $(images[i]).fadeIn(500).siblings().hide(),
-            $(headers[i]).fadeIn(500).siblings().hide(),
-            $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
-    }
+    // function fill(i) {
+    //     return $(images[i]).fadeIn(500).siblings().hide(),
+    //         $(headers[i]).fadeIn(500).siblings().hide(),
+    //         $(navigationCircles[i]).css('color', 'orange').siblings().css('color', 'white');
+    // }
 
-    $('.blogLink').mouseover(function(event){
+    $('.blogLink').mouseover(function(event) {
         $('#blogPopUp').show().fadeOut(2000)
     });
 

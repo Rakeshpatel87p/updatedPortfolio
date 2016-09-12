@@ -1,4 +1,4 @@
-html {
+    html {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     top: 0;
@@ -15,33 +15,34 @@ body {
 }
 
 .wrapper {
-    width: 50%;
-    max-width: 1100px;
-    min-width: 800px;
-    display:flex;
-    margin-left: 18%;
+    width: 70%;
+    margin-left:15%;
+/*    display: flex;*/
     flex-direction: row;
     align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   flex-wrap: wrap;
-   flex-flow: row wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-bottom:1%;
+    display:none;
 }
 
 .pin {
-    color:black;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
     display: inline-block;
-    background: orange;
+    background: #e05252;
     border: 2px solid #FAFAFA;
     box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
     margin: 0 2px 15px;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-    column-break-inside: avoid;
     padding: 15px;
     padding-bottom: 5px;
-    opacity: 1;
-    flex: 1;
+    opacity: 0.5;
     -webkit-transition: all .2s ease;
     -moz-transition: all .2s ease;
     -o-transition: all .2s ease;
@@ -61,69 +62,9 @@ body {
     margin: 0;
 }
 
-.aboutMePin {
-    width: 62%;
+.pin:hover {
+    opacity: 1;
 }
-
-.nytimesPin {
-    width: 75%;
-}
-
-/*.demo-2 {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-    float: left;
-    margin-right: 20px;
-}
-
-.demo-2 p,
-.demo-2 h2 {
-    color: #fff;
-    padding: 10px;
-    left: -20px;
-    top: 20px;
-    position: relative
-}
-
-.demo-2 p {
-    font-size: 12px;
-    line-height: 18px;
-    margin: 0
-}
-
-.demo-2 h2 {
-    font-size: 20px;
-    line-height: 24px;
-    margin: 0;
-}
-
-.effect > img {
-        position:absolute;
-
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    margin: -12px 0;
-    -webkit-transition: bottom .7s ease-in-out;
-    -moz-transition: bottom .7s ease-in-out;
-    -o-transition: bottom .7s ease-in-out;
-    transition: bottom .7s ease-in-out
-}
-
-.effect img.top:hover {
-    bottom: -96px;
-    padding-top: 100px
-}
-
-h2.zero,
-p.zero {
-    margin: 0;
-    padding: 0
-}*/
 
 .absolute-center,
 .menu,
@@ -274,6 +215,7 @@ p.zero {
 
 .rotationEffectOne {
     transform: rotateY(360deg)
+    
 }
 
 .nameDefault {
@@ -282,7 +224,7 @@ p.zero {
     padding-top: 10%;
 }
 
-#nameGradient {
+.nameDefault {
     font-weight: 500;
     font-size: 5.3em;
     display: table;
@@ -395,6 +337,8 @@ p.zero {
 
 .aboutMeBlurb {
     font-size: 19px;
+    margin-bottom:-2%;
+    margin-top:-2%;
 }
 
 .aboutMePartI,
@@ -405,10 +349,6 @@ p.zero {
     width: 70%;
     margin-left: 13%;
     height: 150px;
-}
-
-#tidBitParagraph {
-    margin-top: 9%;
 }
 
 .aboutMeParagraphOne,
@@ -482,19 +422,19 @@ p.zero {
 }
 
 @media screen and (min-width: 712px) {
-        #columns {
+    #columns {
         -webkit-column-count: 2;
         -moz-column-count: 2;
         column-count: 2;
     }
-
     .nameDefault {
-        font-size: 10em;
-        padding-top: 9%;
+        font-size: 7em;
+        padding-top: 11%;
     }
     #jobTitle {
         font-size: 62px;
         margin-top: -1%;
+        margin-bottom:4%;
     }
     .circle {
         margin: 0% 2% 2% 2%;
@@ -511,7 +451,7 @@ p.zero {
     .aboutMePartII {
         width: 46%;
         margin-left: 25%;
-        margin-top: -2%;
+        margin-top: 2%;
     }
     .portfolioImages > img {
         /*width: 30%;*/
