@@ -26,6 +26,7 @@ $(function() {
         $('.wrapper').css('display', 'none');
         $('.aboutMeBlurb').children().children().fadeIn(500);
         $('.nameDefault').animate({ 'padding-top': '11%' }, 1000);
+        $('#portfolioCircle').removeClass('circleAfterClick')
 
     });
     // Close button for AboutMe section
@@ -68,6 +69,7 @@ $(function() {
     });
     // Opens Portfolio
     $('.portfolioLink').click(function() {
+        $('#portfolioCircle').addClass('circleAfterClick');
         $('.nameDefault').animate({ 'padding-top': '5%' }, 1000);
         $('.circle').addClass('rotationEffectOne');
         $('.aboutMeBlurb').children().fadeOut(1000);
